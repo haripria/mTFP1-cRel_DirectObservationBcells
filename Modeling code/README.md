@@ -1,5 +1,5 @@
 To generate figures for the mTFP1-cRel paper, one could use the simulated data that we generated for the paper (Link to simulated data?), 
-or generate new data from scratch using the scripts in the `simulation scripts` dir.
+or generate new data from scratch using the scripts in the `simulation_scripts` dir.
 Notice that the simulation script `mainHaricRel.jl` use parameters in the `params` dir. To be able to run the scripts, you need to have installed julia (> v1.7) and the required packages each script specifies.
 - To plot the figures from our simulated data (Link to simulated data?), one can modify the `cRel WT vs EKO gen histogram.ipynb` jupyter notebook to include the correct working directory (`homedir` and `outdir` on line 1 and 2, block 7), then run all the blocks in the notebook to generate Figure 7J. The same applies to the `NFkB trajectories (cRel paper).ipynb` notebook for Figure 7I, where one needs to modify line 1 and 2 in block 5. Note that `homedir` is the directory where the simulated data is stored, and outdir is the directory where you would like the figures to be outputted.
 
