@@ -8,7 +8,7 @@ Notice that the simulation script `mainHaricRel.jl` use parameters in the `param
 export JULIA_NUM_THREADS=50     # modify this line to the number of threads available on your computer or server
 home_dir="/home/helen/BCELL_PROJECT/"     # modify this line to your working directory, that should include a simulation_scripts/, data/, and params/ subdirectories
 
-# To run the simulation, type the following in a bash environment (i.e. Command Line on Mac)
+# To run the simulation, type the following in a bash environment (i.e. Command Line on Mac):
 ./BCR_CD40_cRelAbundance.sh
 ```
 
