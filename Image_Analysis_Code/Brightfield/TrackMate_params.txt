@@ -1,0 +1,18 @@
+# Created by: Mark Xiang
+# Last updated: 2023/12/07
+# Parameters for LAP tracker in TrackMate
+> Frame to frame linking
+>> Max distence: 60 pixels
+>> Feature penalties
+>>> Area: 1.2
+> Track segment gap closing
+>> Max distance: 75 pixels
+>> Max frame gap: 35
+>> Feature penalties
+>>> Area: 1.2
+>>> Median intensity ch2: 1.0
+> Track segment splitting
+>> Max distance: 10 pixels
+>> Feature penalties
+>>> Median intensity ch2: 1.0
+

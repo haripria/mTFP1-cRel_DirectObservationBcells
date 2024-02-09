@@ -1,0 +1,61 @@
+
+load('/Users/yijiachen/Documents/B_Cell_project/HVN037/data_saved/HVN037_CFP_YFP_nuc_median_mean_int.mat')
+
+tot_cell_num = size(CFP_MedianIntensity_nuc_tot,1);
+CFP_mn = zeros(tot_cell_num,1);
+CFP_sd = zeros(tot_cell_num,1);
+
+
+YFP_mn = zeros(tot_cell_num,1);
+YFP_sd = zeros(tot_cell_num,1);
+
+
+for cn = 1:tot_cell_num
+CFP_columnData = CFP_MedianIntensity_nuc_tot{cn,1}(:,2);
+CFP_mn(cn,1)=mean(CFP_columnData(~isnan(CFP_columnData)));  
+CFP_sd(cn,1)=std(CFP_columnData(~isnan(CFP_columnData)));
+
+
+YFP_columnData = YFP_MedianIntensity_nuc_tot{cn,1}(:,2);
+YFP_mn(cn,1)=mean(YFP_columnData(~isnan(YFP_columnData)));  
+YFP_sd(cn,1)=std(YFP_columnData(~isnan(YFP_columnData)));
+
+end
+CFP_cv=CFP_sd./CFP_mn;
+YFP_cv=YFP_sd./YFP_mn;
+y_data = [CFP_cv YFP_cv];
+
+
+figure;
+swarmchart(1:2, y_data, 50, 'filled', 'black');
+xlabel('X-axis Label', 'FontSize', 12);
+ylabel('Y-axis Label', 'FontSize', 12);
+title('Swarm Chart Title', 'FontSize', 14);
+ax = gca;
+ax.FontSize = 10;
+ax.XGrid = 'on';
+ax.YGrid = 'on';
+
+
+
+figure;
+histogram(CFP_cv, 'NumBins', 20, 'FaceColor', [0, 0.5, 1]);
+xlabel('CFP CV Value', 'FontSize', 12);
+ylabel('Frequency', 'FontSize', 12);
+title('Histogram of CFP Coefficient of Variation', 'FontSize', 14);
+ylim([0,25])
+ax = gca;
+ax.FontSize = 10;
+ax.XGrid = 'on';
+ax.YGrid = 'on';
+
+figure;
+histogram(YFP_cv, 'NumBins', 20, 'FaceColor', [0, 0.5, 1]);
+xlabel('YFP CV Value', 'FontSize', 12);
+ylabel('Frequency', 'FontSize', 12);
+title('Histogram of YFP Coefficient of Variation', 'FontSize', 14);
+ylim([0,25])
+ax = gca;
+ax.FontSize = 10;
+ax.XGrid = 'on';
+ax.YGrid = 'on';
