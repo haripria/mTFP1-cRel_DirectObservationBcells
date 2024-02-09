@@ -1,6 +1,14 @@
 To generate figures for the mTFP1-cRel paper, one could use the simulated data that we generated for the paper (in the `simulated data` dir), 
 or generate new data from scratch using the scripts in the `simulation scripts` dir.
 Notice that the simulation script `mainHaricRel.jl` use parameters in the `params` dir.
+To run the simulation from scratch, one can modify the `BCR_CD40_cRelAbundance.sh` shell script to include the correct working directory, then run the shell script:
+```
+export JULIA_NUM_THREADS=50     # modify this line to the number of threads available on your computer or server
+home_dir="/home/helen/BCELL_PROJECT/"     # modify this line to your working directory, that should include a simulation_scripts/, data/, and params/ subdirectories
+
+# To run the simulation, type the following in a bash environment (i.e. Command Line on Mac)
+./BCR_CD40_cRelAbundance.sh
+```
 
 ### Simulation Scripts:
 - `mainHaricRel.jl`: function for running the simulations and saving results
@@ -8,7 +16,7 @@ Notice that the simulation script `mainHaricRel.jl` use parameters in the `param
 - `ReactionRates3_old.jl`: reaction rate parameters for all module
 - `ODE_NFkB2.jl`: ODE equations for NFkB module (before integrating noncanonical)
 - `ODE_Apoptosis2_old.jl`: ODE equations for Apoptosis module (removed the presence of A52, C52, and ABCR)
-- `ODE_Differentiation.jl`: ODE equations for Differentiation module
+- `ODE_Differentiation.jl`: ODE equations for Differentiation module (Roy et al. 2019 Immunity, included but not used)
 - `ODE_Proliferation2_old.jl`: ODE equations for Cell Cycle module (modifed from Mitchell et al. 2018 PNAS)
 - `SimulateFunctionsHaricRel.jl`: pre-simulation and simulation functions
 - `HelperFunctions_old.jl`: helper functions for Michaelis-Menten and Hill functions, as well as parameter distributions
