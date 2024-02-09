@@ -1,7 +1,9 @@
 To generate figures for the mTFP1-cRel paper, one could use the simulated data that we generated for the paper (in the `simulated data` dir), 
 or generate new data from scratch using the scripts in the `simulation scripts` dir.
 Notice that the simulation script `mainHaricRel.jl` use parameters in the `params` dir.
-To run the simulation from scratch, one can modify the `BCR_CD40_cRelAbundance.sh` shell script to include the correct working directory, then run the shell script:
+- To plot the figures from our simulated data (Link to simulated data?), one can modify the `cRel WT vs EKO gen histogram.ipynb` jupyter notebook script to include the correct working directory (line 1 and 2, block 7), then run all the blocks in the notebook.
+
+- To run the simulation from scratch, one can modify the `BCR_CD40_cRelAbundance.sh` shell script to include the correct working directory, then run the shell script:
 ```
 export JULIA_NUM_THREADS=50     # modify this line to the number of threads available on your computer or server
 home_dir="/home/helen/BCELL_PROJECT/"     # modify this line to your working directory, that should include a simulation_scripts/, data/, and params/ subdirectories
